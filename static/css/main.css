@@ -1,0 +1,45 @@
+html {
+  color: #fffadd;
+  font-size: 62.5%;
+  font-family: "Open Sans", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+body {
+  font-size: 10px;
+  font-size: 1rem;
+  background-color: #444455;
+  padding: 0px;
+  margin: 0; }
+
+.content {
+  width: 100%;
+  max-width: 75rem;
+  margin: auto;
+  text-align: center; }
+
+.hidden {
+  display: none; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+a {
+  color: #f17018;
+  text-decoration: none;
+  transition: color 0.25s ease-out 0s; }
+
+header h1 {
+  text-shadow: 1px 1px #222233; }
+
+main .content {
+  border: 1px solid #222233;
+  background-color: #eeeeee;
+  color: #444455;
+  padding: 2rem; }
+
+footer div {
+  margin: 2rem; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test template page</title>    
+</head>
+<body>
+
+<h1>Test Template Page</h1>
+
+<ul>
+    {% for c in categories %}
+    <li><span>{{ c.id }}</span> <span>{{ c.name }}</span></li>
+    {% endfor %}
+</ul>
+
+
+
+</body>
+</html>
