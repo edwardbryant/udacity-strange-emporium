@@ -3,9 +3,15 @@ $off-white: #eeeeee;
 $yellow-white: #fffadd;
 $dark-gray: #444455;
 $darker-gray: #222233;
-$link-color: #f17018;
+$link-light: #f3c733;
+$link-dark: #685934;
+$green: #446655;
+$red: #774444;
+$white-transparent: hsla(0,100%,100%,0.4);
+$dark-gray-transparent: hsla(240, 20%, 17%, 0.8);
 
 $open-sans: "Open Sans", "Arial", sans-serif;
+$cardo: "Cardo";
 
 html {
     color: $yellow-white;
@@ -14,6 +20,7 @@ html {
     -webkit-font-smoothing: antialiased; 
 }
 body {
+    background-image: url("../dark-wood.jpg");
     font-size: 10px; 
     font-size: 1rem;
     background-color: $dark-gray;
@@ -34,27 +41,337 @@ body {
     display: table;
     clear: both;
 }
+
 a {
-    color: $link-color;
     text-decoration: none;
     transition: color 0.25s ease-out 0s;
 }
-header {
-    h1 {
-        text-shadow: 1px 1px $darker-gray;
+
+button {
+    font: 400 1.6rem/1.6rem $open-sans;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    background-color: $dark-gray;
+    padding: 0.8rem 1.4rem;
+    border: 2px solid $darker-gray;
+    color: $off-white;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out 0s;
+    button i {
+        margin-right: 1rem;
+    }
+    button:hover {
+        border: 2px solid $darker-gray;
+        background-color: #eeeeee;
+        color: #345185;
+        transition: all 0.25s ease-in-out 0s;
     }
 }
+.green-button {
+    background-color: $green;
+}
+.red-button {
+    background-color: $red;
+}
+
+
+header {
+    h1 {
+        font: 700 4rem/4rem $cardo;
+        letter-spacing: 0.8rem;
+        text-transform: uppercase;
+        text-shadow: 2px 2px $darker-gray;
+    }
+    h2 {
+        font: 400 2rem/2rem $cardo;
+        font-style: italic;
+        letter-spacing: 0.1rem;
+        text-shadow: 1px 1px $darker-gray;
+        margin-top: -2rem;
+    }
+}
+
+nav {
+    #nav {
+        background-color: $darker-gray;
+        border-top: 1px solid $white-transparent;
+        border-bottom: 1px solid $white-transparent;
+        margin-bottom: 1rem;
+    }
+    div {
+        margin: 1rem;
+        font: 400 1.4rem/1.4rem $open-sans;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+        color: $link-light;   
+    }
+    span {
+        margin: 0 1rem;
+    }
+    a {
+        color: $link-light;
+    }
+    a:hover {
+        color: $link-dark;
+    }
+}
+
 main {
     .content {
         border: 1px solid $darker-gray;
-        background-color: $off-white;
+        background-color: $white-transparent;
         color: $dark-gray;
-        padding: 2rem;
+    }
+    section {
+        background-color: $white-transparent;
+        border: 4px solid $dark-gray;
+        padding: 0 1rem 2rem 1rem;
+        margin: 1.4rem;        
+    }
+    h3 {
+        font: 700 2.4rem/2.4rem $open-sans;
+        text-transform: uppercase;
+        letter-spacing: 0.6rem;
+        color: $dark-gray;       
     }
 }
-footer {
-    div {
+
+.user-ctrls {
+    background-color: $dark-gray-transparent;
+    color: $off-white;
+    font: 400 1rem/1rem $open-sans;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    padding: 1rem;
+    a {
+        color: $link-light;
+    }
+    a:hover {
+        color: $link-dark;
+    }
+}
+
+.message {
+    background-color: $link-light;
+    color: $link-dark;
+    font: 400 1.6rem/1.6rem $open-sans;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    padding: 1rem;    
+}
+
+.home {
+    .spotlight {
+        height: 240px;
+        width: 240px;
+    }
+    img {
+        border: 1px solid $darker-gray;
+    }
+    a {
+        color: red;
+    }
+}
+
+.featured {
+}
+
+.item-group {
+    .null-message {
+        font: 400 1.6rem/1.6rem $open-sans;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        padding: 6rem 1rem;
+    }
+    .item {
+        display: inline-block;
+        border: 1px solid $darker-gray;
+        width: 20rem;
+        height: 20rem;
+        margin: 1rem;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+    }
+    .item img {
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        opacity: 0.3;
+        -webkit-transition: all 300ms ease-out;
+        -moz-transition: all 300ms ease-out;
+        -o-transition: all 300ms ease-out;
+        -ms-transition: all 300ms ease-out;
+        transition: all 300ms ease-out;
+    }
+    .item:hover img {
+        z-index: 99;
+        opacity: 0.9;
+        -moz-transform: scale(1.4);
+        -o-transform: scale(1.4);
+        -webkit-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+    .item .caption {
+        text-align: center;
+    }
+    .item .caption > .title {
+        font: 400 1.8rem/1.8rem $open-sans;        
+        color: $off-white;
+        text-shadow: 1px 1px $darker-gray;
+        margin: 3.6rem 0 2rem 0;
+        z-index: 50;    
+    }
+    .item .caption > .price {
+        font: 400 2.2rem/2.2rem $open-sans;        
+        color: $link-dark;
+        margin: 2rem 0 1rem 0;
+        z-index: 50;    
+    }
+
+}
+
+.customer-service {
+    background-color: $darker-gray;
+    color: $off-white;
+    font: 400 1.6rem/1.6rem $open-sans;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    padding: 1rem;    
+}
+
+.categories {
+    .category-name {
+        font: 400 2rem/2.4rem $open-sans;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        margin: 0.8rem 0;
+    }
+    .category-name a {
+        color: $darker-gray;
+    }
+}
+
+.item-details {
+    h2 {
+        background-color: $link-light;
+        font: 400 1.6rem/2.2rem $open-sans;
+        letter-spacing: 0.08rem;
+        text-transform: uppercase;
+        border: 1px solid $link-dark;
+    }
+    h2 > i {
+        font-size: 1.2rem;
+        line-height: 2.2rem;
+    }
+    .item-img {
+        width: 38%;
+        float: left;
+    }
+    img {
+        border: 1px solid $darker-gray;
+    }
+    .item-info {
+        width: 58%;
+        float: left;
+    }
+    .item-info > div {
+        margin: 2rem 0;
+    }
+    .price {
+        font: 700 2.2rem/2.2rem $open-sans;
+        letter-spacing: 0.08rem;
+    }
+    .description {
+        font: 400 1.4rem/2.4rem $open-sans;
+        letter-spacing: 0.08rem;
+        text-align: left;
+    }
+}
+
+.location {
+    .location-info {
+        width: 48%;
+        float: left;
+    }
+    .location-info p {
+        font: 400 1.6rem/2.6rem $open-sans;
+        letter-spacing: 0.08rem;
+        text-align: left;
         margin: 2rem;
+    }
+    .location-map {
+        width: 48%;
+        float: left;
+    }
+    .location-map img {
+        border: 1px solid $darker-gray;
+    }
+}
+
+form {
+    font: 400 2rem/2.2rem $open-sans;
+    margin: 4rem auto;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    label {
+        display: block;
+        margin: 0.6rem 0;
+    }
+    label > span, small {
+        color: #cc0000;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+    }
+    input {
+        font: 400 1.8rem/1.8rem $open-sans;
+        display: block;
+        width: 30rem;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        color: $darker-gray;
+        padding: 1rem;
+        border: 1px solid $darker-gray;
+        background-color: white;
+        margin: 0.6rem auto;
+    }
+    input:hover {
+        
+    }
+
+}
+
+footer {
+    .content {
+        background-color: $darker-gray;
+        border-top: 1px solid $white-transparent;
+        border-bottom: 1px solid $white-transparent;
+        margin-top: 1rem;
+    }
+    .foot-cols > div {
+        float: left;
+        width: 30%;
+        text-align: left;
+    }
+    .foot-cols > div > div {
+        margin-left: 5rem;
+    }
+    .foot-cols > div > h4 {
+        margin-left: 4rem;
+    }
+    div {
+        margin: 1rem;
+        font: 400 0.6rem/0.6rem $open-sans;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;    
+    }
+    a {
+        color: $off-white;
+    }
+    a:hover {
+        color: $link-light;
     }
 }
 

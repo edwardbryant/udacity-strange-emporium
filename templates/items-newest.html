@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}Newest Items{% endblock %}
+
+{% block section_1 %}
+<section class="featured">
+    <h3>&bull; Newest Items&bull;</h3>
+    <div class="item-group">
+        {% for i in items %}
+        <div class="item">
+            <a href="{{ url_for('ShowItem', i_id = i.id) }}"><img src="http://placehold.it/200x200&text=Example"></a>
+            <div class="caption">
+                <div class="title">{{ i.name }}</div>
+                <div class="price">{{ i.price }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+
+{% block section_2 %}
+<section class="customer-service">
+    <div>Need Help? Call Customer Service &bull; (617) 555.0103</div>
+</section>
+{% endblock %}
+
+{% block section_3 %}
+{% endblock %}

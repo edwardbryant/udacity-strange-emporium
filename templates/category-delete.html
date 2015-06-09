@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}Delete Category{% endblock %}
+
+{% block section_1 %}
+<section>
+    <h3>&bull; Delete Category &bull;</h3>
+    <form action="{{ url_for('DeleteCategory', c_id = category.id) }}" method="post">
+        <div>Are you sure you want to delete the <em>{{ category.name }}</em> category?</div>
+        <br>
+        <div>
+            <button class="red-button" type="submit">Delete</button>
+            <a href="{{ url_for('ShowItemsInCategory', c_id = category.id) }}"><button type="button">Cancel</button></a>
+        </div>
+    </form>
+</section>
+{% endblock %}
+
+{% block section_2 %}
+<section class="customer-service">
+    <div>Need Help? Call Customer Service &bull; (617) 555-0103</div>
+</section>
+{% endblock %}
+
+{% block section_3 %}
+{% endblock %}

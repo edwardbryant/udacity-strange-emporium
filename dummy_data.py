@@ -53,23 +53,27 @@ category4 = Category(name = "astronomical")
 session.add(category4)
 session.commit()
 
-category5 = Category(name = "uncategorized")
+category5 = Category(name = "books")
 session.add(category5)
+session.commit()
+
+category6 = Category(name = "occult")
+session.add(category6)
 session.commit()
 
 
 # Add items and item-category assignments
-item1 = Item(name = "Thing 1",
-             img = "thing1.png",
+item1 = Item(name = "Necronomicon",
+             img = "image.png",
              featured = 0,
              price = "$99.99",
-             description = "The first thing is thing 1, it's scientific and much better than thing 2 or thing 3.")
+             description = "This leather-bound text is an unattributed Latin translation (c. 17th-century), originally authored by Abdul 'The Mad Arab' Alhazred. The grimoire is in fair to good condition for its age.")
 session.add(item1)
 session.commit()
-item_category1 = ItemCategory(item = item1, category = category2)
+item_category1 = ItemCategory(item = item1, category = category5)
 session.add(item_category1)
 session.commit()
-item_category2 = ItemCategory(item = item1, category = category4)
+item_category2 = ItemCategory(item = item1, category = category6)
 session.add(item_category2)
 session.commit()
 

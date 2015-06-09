@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Browse{% endblock %}
+
+{% block section_1 %}
+{% endblock %}
+
+{% block section_2 %}
+<section class="categories">
+    <h3>&bull; Browse &bull;</h3>
+    <div class="category-name"><a href="{{ url_for('ShowAllItems') }}">All Items</a></div>
+    <div> &mdash;&mdash;&mdash; </div>
+    {% for c in categories %} <div class="category-name"><a href="{{ url_for('ShowItemsInCategory', c_id = c.id) }}">{{ c.name }}</a></div> {% endfor %}
+    <br>
+    <div><a href="{{ url_for('NewCategory') }}"><button type="button">Add Category</button></a></div>
+
+</section>
+{% endblock %}
+
+{% block section_3 %}
+<section class="customer-service">
+    <div>Need Help? Call Customer Service &bull; (617) 555.0103</div>
+</section>
+{% endblock %}

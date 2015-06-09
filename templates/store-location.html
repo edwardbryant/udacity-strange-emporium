@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Visit{% endblock %}
+
+{% block section_1 %}
+<section class="location">
+
+    <h3>&bull; Visit Our Store &bull;</h3>
+
+    <div class="clearfix">
+        <div class="location-info">
+            <p>Strange Emporium<br>342 North Hobbs St.<br>Dunwich, Mass. 01929<br><br>(617) 555-0103<br>help@strangeemporium.com</p>
+        </div>
+        <div class="location-map">
+            <img src="{{ url_for('static', filename = 'img/strange-emporium-map.png') }}">
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block section_2 %}
+<section class="customer-service">
+    <div>Need Help? Call Customer Service &bull; (617) 555-0103</div>
+</section>
+{% endblock %}
+
+{% block section_3 %}
+{% endblock %}
